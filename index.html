@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>%%SEO_TITULO%%</title>
+  <meta name="description" content="%%SEO_DESC%%">
+  <link rel="canonical" href="%%SITE%%/">
+  <meta name="theme-color" content="#060509">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="%%SEO_TITULO%%">
+  <meta property="og:description" content="%%SEO_DESC%%">
+  <meta property="og:image" content="%%SITE%%/img/og.jpg">
+  <meta property="og:url" content="%%SITE%%/">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="apple-touch-icon" href="img/logo-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">%%LD%%</script>
+</head>
+<body>
+%%ICONS%%
+
+<!-- Pantalla de carga -->
+<div class="loader" aria-hidden="true">
+  <img class="loader__logo" src="img/logo.jpg" alt="" width="120" height="120">
+  <div class="loader__meta"><span>IRON DARK</span><span class="loader__n">000</span></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+%%AVISO%%
+
+<header class="nav">
+  <a class="nav__brand" href="#top" aria-label="%%NOMBRE%% — inicio">
+    <img src="img/logo.jpg" alt="" width="40" height="40">
+    <span>IRON<b>DARK</b></span>
+  </a>
+  <nav class="nav__links" aria-label="Secciones">
+    <a href="#lugar">El lugar</a>
+    <a href="#planes">Planes</a>
+    <a href="#entrenador">Entrenador</a>
+    <a href="#horario">Horario</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+  <div class="nav__right">
+    <span class="status" data-status><i></i><span>Horario</span></span>
+    <a class="btn btn--sm btn--violet" href="%%IG%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-instagram"/></svg><span>@%%IG_USER%%</span></a>
+    <button class="nav__burger" type="button" aria-label="Abrir menú" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="drawer" aria-hidden="true">
+  <nav>
+    <a href="#lugar"><span>01</span>El lugar</a>
+    <a href="#planes"><span>02</span>Planes</a>
+    <a href="#entrenador"><span>03</span>Entrenador</a>
+    <a href="#horario"><span>04</span>Horario</a>
+    <a href="#ubicacion"><span>05</span>Ubicación</a>
+  </nav>
+  <a class="btn btn--violet" href="%%IG%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-instagram"/></svg> Síguenos en Instagram</a>
+</div>
+
+<main id="top">
+  <!-- ============ PORTADA ============ -->
+  <section class="hero">
+    <div class="hero__fog" aria-hidden="true"></div>
+
+
+    <div class="hero__content">
+      <p class="eyebrow" data-scramble>Gimnasio · %%COMUNA%%, Santiago</p>
+      <h1 class="hero__title" aria-label="Iron Dark">
+        <span class="chrome" data-text="IRON">IRON</span>
+        <span class="chrome chrome--out" data-text="DARK">DARK</span>
+      </h1>
+      <p class="hero__q">%%HERO_PREGUNTA%%</p>
+      <p class="hero__sub">%%HERO_BAJADA%%</p>
+      <div class="hero__cta">
+        <!-- SI:PASE --><a class="btn btn--violet btn--lg" href="#pase"><svg class="i"><use href="#i-id"/></svg> Entrena gratis hoy</a><!-- /SI:PASE -->
+        <a class="btn btn--ghost btn--lg" href="#planes">Ver planes desde $%%BASE_PRECIO%%</a>
+      </div>
+    </div>
+
+    <div class="hero__foot">
+      <span><svg class="i"><use href="#i-pin"/></svg>%%DIRECCION%%</span>
+      <a href="#lugar" class="scrollhint" aria-label="Bajar"><i></i></a>
+      <span class="gothic">Fuerza · Disciplina · Constancia</span>
+    </div>
+  </section>
+
+  <!-- ============ CINTA ============ -->
+  <div class="band" aria-hidden="true">
+    <div class="band__track">%%MARQUEE%%</div>
+  </div>
+
+
+  <!-- ============ EL LUGAR ============ -->
+  <!-- SI:GALERIA -->
+  <section class="place" id="lugar">
+    <div class="shead place__head">
+      <p class="mono">[ 01 ] — El gym</p>
+      <h2 class="h2">Conoce <em class="violet">Iron Dark</em></h2>
+    </div>
+    <div class="reel" aria-label="Fotos del gimnasio">
+      <div class="reel__row">%%GALERIA_A%%</div>
+      <div class="reel__row reel__row--rev">%%GALERIA_B%%</div>
+    </div>
+  </section>
+  <!-- /SI:GALERIA -->
+
+  <!-- ============ PLANES ============ -->
+  <section class="section" id="planes">
+    <div class="shead">
+      <p class="mono">[ 02 ] — Planes</p>
+      <h2 class="h2">Elige cómo<br>quieres <em class="violet">empezar</em></h2>
+      <p class="lead">Precios claros, sin matrícula escondida. Pregunta lo que quieras por Instagram.</p>
+    </div>
+    <div class="plans">%%PLANES%%
+    </div>
+  </section>
+
+  <!-- ============ GRUPOS ============ -->
+  <!-- SI:GRUPOS -->
+  <section class="section section--split" id="grupos">
+    <div class="shead">
+      <p class="mono">[ 02.1 ] — Promos grupales</p>
+      <h2 class="h2">Solo se entrena<br>más <em class="violet">rápido.</em><br>Juntos, más lejos.</h2>
+      <p class="lead">Arma tu equipo y paguen menos cada uno. Elige cuántos son:</p>
+    </div>
+    <div class="calc spot" data-reveal>
+      <div class="seg" role="group" aria-label="Cantidad de personas">%%GRUPOS_BTNS%%</div>
+      <div class="calc__people" aria-hidden="true"></div>
+      <p class="calc__name" data-g-name></p>
+      <p class="calc__big"><span class="cur">$</span><span data-g-each>0</span><small>c/u al mes</small></p>
+      <div class="calc__row">
+        <span>Total del grupo <b data-g-total></b></span>
+        <span class="calc__save">Ahorran <b data-g-save></b> al mes</span>
+      </div>
+      <p class="calc__note"><svg class="i"><use href="#i-alert"/></svg>%%GRUPOS_COND%%</p>
+      <div class="friend">
+        <span class="friend__ico"><svg class="i"><use href="#i-user-plus"/></svg></span>
+        <div><b>%%AMIGO_TITULO%%</b><p>%%AMIGO_TEXTO%%</p></div>
+      </div>
+    </div>
+  </section>
+  <!-- /SI:GRUPOS -->
+
+  <!-- ============ ENTRENADOR ============ -->
+  <!-- SI:SESIONES -->
+  <section class="section section--split section--rev" id="entrenador">
+    <div class="shead">
+      <p class="mono">[ 03 ] — Clases personalizadas</p>
+      <h2 class="h2">Un entrenador<br>solo <em class="violet">para ti</em></h2>
+      <p class="lead">Técnica, rutina a tu medida y alguien que no te deja rendirte. Mientras más sesiones, menos pagas por cada una.</p>
+    </div>
+    <div class="calc spot" data-reveal>
+      <p class="calc__lbl mono">Sesiones</p>
+      <p class="calc__sessions"><span data-s-n>4</span></p>
+      <div class="range">
+        <input type="range" min="0" max="%%SESIONES_MAX%%" step="1" value="0" aria-label="Cantidad de sesiones" data-s-range>
+        <div class="range__ticks">%%SESIONES_TICKS%%</div>
+      </div>
+      <div class="calc__split">
+        <div><small>Valor total</small><b data-s-total></b></div>
+        <div><small>Por sesión</small><b data-s-each></b></div>
+        <div><small>Ahorro</small><b class="violet" data-s-save></b></div>
+      </div>
+      <a class="btn btn--light" href="%%IG_DM%%" target="_blank" rel="noopener">Reservar mi entrenador <svg class="i"><use href="#i-arrow-up-right"/></svg></a>
+    </div>
+  </section>
+  <!-- /SI:SESIONES -->
+
+  <!-- ============ PASE GRATIS ============ -->
+  <!-- SI:PASE -->
+  <section class="section" id="pase">
+    <div class="pass spot" data-reveal>
+      <div class="pass__card" aria-hidden="true">
+        <div class="pass__id">
+          <svg class="i"><use href="#i-id"/></svg>
+          <span class="pass__scan"></span>
+        </div>
+        <span class="pass__stamp">Gratis</span>
+      </div>
+      <div class="pass__txt">
+        <p class="mono">[ 04 ] — Prueba gratis</p>
+        <h2 class="h2">Tu primer día<br>corre por <em class="violet">nuestra cuenta</em></h2>
+        <p class="lead">%%PASE_TEXTO%%</p>
+        <div class="hero__cta">
+          <a class="btn btn--violet" href="%%MAPS_URL%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-nav"/></svg> Cómo llegar</a>
+          %%WHATSAPP_BTN%%
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /SI:PASE -->
+
+  <!-- ============ HORARIO ============ -->
+  <section class="section section--split" id="horario">
+    <div class="shead">
+      <p class="mono">[ 05 ] — Horario</p>
+      <h2 class="h2">Abierto<br>los <em class="violet">7 días</em></h2>
+      <p class="lead status-lead" data-status-text>Revisa si estamos abiertos ahora mismo.</p>
+      <div class="hours">%%HORARIO%%
+      </div>
+    </div>
+    <div class="week spot" data-reveal>
+      <div class="week__head"><span class="mono">Semana</span><span class="status" data-status><i></i><span>Horario</span></span></div>
+      <div class="wk">%%SEMANA%%</div>
+      <div class="wk__scale mono"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+    </div>
+  </section>
+
+  <!-- ============ UBICACIÓN ============ -->
+  <section class="section" id="ubicacion">
+    <div class="loc">
+      <div class="loc__map" data-reveal>
+        <iframe title="Mapa de %%NOMBRE%%" src="%%MAPS_EMBED%%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <span class="loc__pin"><i></i></span>
+      </div>
+      <div class="loc__info">
+        <p class="mono">[ 06 ] — Ubicación</p>
+        <h2 class="h2">%%DIRECCION%%</h2>
+        <p class="lead">%%COMUNA%%, %%REGION%%. Frente al Colegio Andes, a pasos de la Autopista Central.</p>
+        <div class="hero__cta">
+          <a class="btn btn--violet" href="%%MAPS_URL%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-nav"/></svg> Abrir en Google Maps</a>
+          <a class="btn btn--ghost" href="%%IG_DM%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-instagram"/></svg> Escríbenos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CIERRE ============ -->
+  <section class="final">
+    <div class="final__glow" aria-hidden="true"></div>
+    <p class="mono">[ 07 ] — Ahora te toca a ti</p>
+    <h2 class="final__t">%%LEMA_WORDS%%</h2>
+    <a class="btn btn--violet btn--xl" href="%%IG%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-instagram"/></svg> @%%IG_USER%%</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__brand"><img src="img/logo.jpg" alt="Logo %%NOMBRE%%" width="56" height="56" loading="lazy"><div><b>%%NOMBRE%%</b><span>%%DIRECCION%%, %%COMUNA%%</span></div></div>
+  <div class="foot__links">
+    <a href="%%IG%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-instagram"/></svg>Instagram</a>
+    <a href="%%MAPS_URL%%" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>Google Maps</a>
+  </div>
+  <p class="foot__c mono">© %%YEAR%% %%NOMBRE%% · <span class="gothic">Fuerza · Disciplina · Constancia</span></p>
+</footer>
+
+
+<script>window.__ID__ = %%DATA%%;</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

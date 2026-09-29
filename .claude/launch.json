@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "irondark", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "5610", "--directory", "dist"], "port": 5610 }
+  ]
+}

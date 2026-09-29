@@ -1,0 +1,26 @@
+{
+  "planes": [
+    { "nombre": "Mensualidad", "detalle": "Pase libre", "precio": 42000, "periodo": "mes", "condicion": "Todo el horario, todos los días", "icono": "infinito", "destacado": true, "visible": true },
+    { "nombre": "Promo Madrugadores", "detalle": "Ingreso de 7 a 9 AM", "precio": 33000, "periodo": "mes", "condicion": "Entrena antes que la ciudad despierte", "icono": "amanecer", "destacado": false, "visible": true },
+    { "nombre": "Universitarios y escolares", "detalle": "Con credencial vigente", "precio": 35000, "periodo": "mes", "condicion": "Presenta tu credencial al inscribirte", "icono": "estudiante", "destacado": false, "visible": true },
+    { "nombre": "Adulto mayor de 65", "detalle": "Ingreso de 7 a 10 AM", "precio": 25000, "periodo": "mes", "condicion": "Nunca es tarde para empezar", "icono": "adulto", "destacado": false, "visible": true },
+    { "nombre": "Pase diario", "detalle": "Un día completo", "precio": 7000, "periodo": "día", "condicion": "Ideal para probar o si estás de paso", "icono": "ticket", "destacado": false, "visible": true }
+  ],
+  "grupos": [
+    { "personas": 2, "nombre": "Plan Parejas", "total": 76000, "frase": "Entrenen juntos, alcancen más." },
+    { "personas": 3, "nombre": "Promo Grupal", "total": 114000, "frase": "Más motivación, más resultados." },
+    { "personas": 4, "nombre": "Promo Grupal", "total": 144000, "frase": "Tu squad completo, al mejor precio." }
+  ],
+  "grupos_condicion": "Todos deben renovar juntos; si no, la promoción no es válida.",
+  "amigo_titulo": "Trae un amigo",
+  "amigo_texto": "Si traes a un amigo y se inscribe, obtienes 5 días gratis en tu próxima cuota.",
+  "sesiones": [
+    { "cantidad": 4, "total": 32000 },
+    { "cantidad": 8, "total": 60000 },
+    { "cantidad": 12, "total": 84000 },
+    { "cantidad": 16, "total": 104000 },
+    { "cantidad": 20, "total": 120000 }
+  ],
+  "pase_gratis_activo": true,
+  "pase_gratis_texto": "Presenta tu cédula de identidad en recepción y entrena un día gratis. Sin letra chica."
+}

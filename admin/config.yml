@@ -1,0 +1,145 @@
+# Panel /admin de Iron Dark (Sveltia CMS)
+# Cada cambio guardado crea un commit en GitHub y la web se publica sola en ~30 s.
+
+backend:
+  name: github
+  repo: %%GITHUB_REPO%%
+  branch: main
+  commit_messages:
+    create: "Panel: crea {{collection}} «{{slug}}»"
+    update: "Panel: actualiza {{collection}} «{{slug}}»"
+    delete: "Panel: elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Panel: sube foto {{path}}"
+    deleteMedia: "Panel: elimina foto {{path}}"
+
+site_url: %%SITE_URL%%
+display_url: %%SITE_URL%%
+logo_url: ../img/logo.jpg
+
+media_folder: img/galeria
+public_folder: /img/galeria
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1400
+          height: 1400
+
+collections:
+  - name: precios
+    label: Precios y planes
+    icon: payments
+    files:
+      - name: precios
+        label: Planes, promos y entrenador
+        file: data/precios.json
+        format: json
+        fields:
+          - name: planes
+            label: Planes
+            label_singular: plan
+            widget: list
+            summary: "{{fields.nombre}} · ${{fields.precio}}"
+            fields:
+              - { name: nombre, label: Nombre, widget: string }
+              - { name: detalle, label: Detalle corto, widget: string, hint: "Ej: Ingreso de 7 a 9 AM" }
+              - { name: precio, label: Precio, widget: number, value_type: int, min: 0, hint: "Solo números. Ej: 42000" }
+              - { name: periodo, label: Se paga por, widget: select, options: [mes, día, semana, año], default: mes }
+              - { name: condicion, label: Texto extra, widget: string, required: false }
+              - { name: icono, label: Ícono, widget: select, default: infinito, options: [{ label: "Infinito (pase libre)", value: infinito }, { label: "Amanecer", value: amanecer }, { label: "Estudiante", value: estudiante }, { label: "Adulto mayor", value: adulto }, { label: "Ticket", value: ticket }, { label: "Pesa", value: pesa }, { label: "Rayo", value: rayo }] }
+              - { name: destacado, label: Destacar (tarjeta grande), widget: boolean, default: false }
+              - { name: visible, label: Mostrar en la web, widget: boolean, default: true }
+          - name: grupos
+            label: Promos grupales
+            label_singular: promo
+            widget: list
+            summary: "{{fields.personas}} personas · ${{fields.total}}"
+            fields:
+              - { name: personas, label: Cantidad de personas, widget: number, value_type: int, min: 2, max: 10 }
+              - { name: nombre, label: Nombre, widget: string }
+              - { name: total, label: Precio total del grupo, widget: number, value_type: int, min: 0, hint: "La web calcula sola cuánto paga cada uno." }
+              - { name: frase, label: Frase, widget: string, required: false }
+          - { name: grupos_condicion, label: Condición de las promos grupales, widget: string }
+          - { name: amigo_titulo, label: "Trae un amigo: título", widget: string }
+          - { name: amigo_texto, label: "Trae un amigo: texto", widget: text }
+          - name: sesiones
+            label: Clases personalizadas
+            label_singular: paquete
+            widget: list
+            summary: "{{fields.cantidad}} sesiones · ${{fields.total}}"
+            fields:
+              - { name: cantidad, label: Sesiones, widget: number, value_type: int, min: 1 }
+              - { name: total, label: Valor total, widget: number, value_type: int, min: 0 }
+          - { name: pase_gratis_activo, label: Mostrar el pase gratis, widget: boolean, default: true }
+          - { name: pase_gratis_texto, label: Texto del pase gratis, widget: text }
+
+  - name: horario
+    label: Horario
+    icon: schedule
+    files:
+      - name: horario
+        label: Horario de funcionamiento
+        file: data/horario.json
+        format: json
+        fields:
+          - name: bloques
+            label: Bloques de horario
+            label_singular: bloque
+            widget: list
+            summary: "{{fields.dias}} · {{fields.abre}}–{{fields.cierra}}"
+            fields:
+              - { name: dias, label: Cómo se muestra, widget: string, hint: "Ej: Lunes a viernes" }
+              - { name: desde, label: Desde el día, widget: select, options: [lunes, martes, miercoles, jueves, viernes, sabado, domingo] }
+              - { name: hasta, label: Hasta el día, widget: select, options: [lunes, martes, miercoles, jueves, viernes, sabado, domingo] }
+              - { name: abre, label: Abre, widget: string, pattern: ['^\d{2}:\d{2}$', "Formato HH:MM, ej 07:00"] }
+              - { name: cierra, label: Cierra, widget: string, pattern: ['^\d{2}:\d{2}$', "Formato HH:MM, ej 22:00"] }
+          - { name: aviso_activo, label: Mostrar aviso especial, widget: boolean, default: false, hint: "Para feriados o cambios de horario. Aparece arriba de la web." }
+          - { name: aviso_texto, label: Texto del aviso, widget: text, required: false }
+
+  - name: galeria
+    label: Fotos del gimnasio
+    icon: photo_library
+    files:
+      - name: galeria
+        label: Galería
+        file: data/galeria.json
+        format: json
+        fields:
+          - name: fotos
+            label: Fotos
+            label_singular: foto
+            widget: list
+            summary: "{{fields.texto}}"
+            fields:
+              - { name: foto, label: Foto, widget: image }
+              - { name: texto, label: Texto corto, widget: string, required: false }
+
+  - name: ajustes
+    label: Datos y textos
+    icon: settings
+    files:
+      - name: ajustes
+        label: Contacto y portada
+        file: data/ajustes.json
+        format: json
+        fields:
+          - { name: nombre, label: Nombre del gimnasio, widget: string }
+          - { name: instagram, label: Usuario de Instagram, widget: string, hint: "Sin @" }
+          - { name: whatsapp, label: WhatsApp, widget: string, required: false, pattern: ['^(56\d{9})?$', "Formato 569XXXXXXXX (11 dígitos) o vacío"], hint: "Opcional. Formato 56912345678. Vacío = no se muestra." }
+          - { name: direccion, label: Dirección, widget: string }
+          - { name: comuna, label: Comuna, widget: string }
+          - { name: region, label: Región, widget: string }
+          - { name: maps_url, label: Link de Google Maps, widget: string }
+          - { name: hero_pregunta, label: Frase principal de la portada, widget: string }
+          - { name: hero_bajada, label: Texto bajo la frase, widget: text }
+          - { name: lema, label: Lema, widget: string }
+          - { name: valores, label: Valores (cinta animada), widget: list, field: { name: valor, label: Valor, widget: string } }

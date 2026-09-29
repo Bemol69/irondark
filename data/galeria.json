@@ -1,0 +1,16 @@
+{
+  "fotos": [
+    { "foto": "/img/galeria/sala-principal.webp", "texto": "Sala principal" },
+    { "foto": "/img/galeria/maquinas-verdes.webp", "texto": "Máquinas de palanca" },
+    { "foto": "/img/galeria/rack-mancuernas.webp", "texto": "Zona de mancuernas" },
+    { "foto": "/img/galeria/luces-hexagonales.webp", "texto": "Luz que no se apaga" },
+    { "foto": "/img/galeria/multipower.webp", "texto": "Multipower" },
+    { "foto": "/img/galeria/zona-piernas.webp", "texto": "Día de pierna" },
+    { "foto": "/img/galeria/mancuernas.webp", "texto": "Hierro de verdad" },
+    { "foto": "/img/galeria/prensa.webp", "texto": "Prensa y hack" },
+    { "foto": "/img/galeria/cardio.webp", "texto": "Cardio con vista a la calle" },
+    { "foto": "/img/galeria/bancos.webp", "texto": "Bancos ajustables" },
+    { "foto": "/img/galeria/lockers.webp", "texto": "Lockers" },
+    { "foto": "/img/galeria/fachada.webp", "texto": "Av. Domingo Santa María 3715" }
+  ]
+}

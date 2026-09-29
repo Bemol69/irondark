@@ -1,0 +1,8 @@
+{
+  "bloques": [
+    { "dias": "Lunes a viernes", "desde": "lunes", "hasta": "viernes", "abre": "07:00", "cierra": "22:00" },
+    { "dias": "Sábados y domingos", "desde": "sabado", "hasta": "domingo", "abre": "10:00", "cierra": "15:00" }
+  ],
+  "aviso_activo": false,
+  "aviso_texto": "Horario especial por Fiestas Patrias: viernes 18 y sábado 19 de 10:00 a 13:00. Domingo 20 cerrado."
+}
