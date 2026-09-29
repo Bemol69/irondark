@@ -122,10 +122,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__content { position: relative; text-align: center; max-width: 1100px; }
 .eyebrow { display: inline-flex; gap: 10px; align-items: center; font: 500 12px var(--f-mono); letter-spacing: .22em; text-transform: uppercase; color: var(--violet-2); margin: 0 0 18px; padding: 8px 14px; border: 1px solid rgba(167,139,250,.25); border-radius: 999px; background: rgba(124,58,237,.08); backdrop-filter: blur(6px); }
 .hero__title { margin: 0; font: 900 clamp(96px, 21vw, 300px)/.8 var(--f-display); letter-spacing: -.01em; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; }
-.chrome { position: relative; display: block; background: var(--chrome); background-size: 100% 220%; background-position: 0 var(--sheen, 0%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 4px 24px rgba(0,0,0,.6)); }
-.chrome::after { content: attr(data-text); position: absolute; inset: 0; color: transparent; -webkit-text-stroke: 1px rgba(167,139,250,.35); transform: translate(6px, 6px); z-index: -1; }
-.chrome--out { background: none; color: transparent; -webkit-text-stroke: 2px rgba(238,237,243,.85); filter: drop-shadow(0 0 18px var(--glow)); margin-top: -.04em; }
-.chrome--out::after { -webkit-text-stroke: 1px rgba(124,58,237,.6); }
+.chrome { position: relative; display: block; background: var(--chrome); background-size: 100% 220%; background-position: 0 var(--sheen, 0%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* Luz LED detrás de las letras: copia desenfocada en violeta */
+.chrome::after { content: attr(data-text); position: absolute; inset: 0; z-index: -1; color: var(--violet); filter: blur(34px); opacity: .75; animation: led 5s ease-in-out infinite; }
+@keyframes led { 50% { opacity: .6; } }
+/* DARK: tubo de neón (solo contorno encendido) */
+.chrome--out { background: none; color: transparent; -webkit-text-stroke: 2px #f3eeff; margin-top: -.04em;
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 5px var(--violet-2)) drop-shadow(0 0 14px rgba(124,58,237,.8)); animation: neon-on 2.4s steps(1) 1 both .9s; }
+.chrome--out::after { -webkit-text-stroke: 3px var(--violet); color: transparent; filter: blur(14px); opacity: .5; }
+@keyframes neon-on { 0% { opacity: .15 } 8% { opacity: 1 } 12% { opacity: .2 } 18% { opacity: 1 } 22% { opacity: .35 } 30%, 100% { opacity: 1 } }
 .hero__q { margin: 26px auto 10px; font: 700 clamp(22px, 3.2vw, 38px)/1.15 var(--f-display); letter-spacing: .02em; text-transform: uppercase; }
 .strike { position: relative; text-decoration: none; color: var(--muted); }
 .strike::after { content: ""; position: absolute; left: -4%; right: -4%; top: 52%; height: 3px; background: var(--violet-2); transform-origin: left; transform: scaleX(var(--st, 1)); box-shadow: 0 0 12px var(--glow); }
