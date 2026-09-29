@@ -143,6 +143,8 @@ const vars = {
   COMUNA: esc(aj.comuna),
   REGION: esc(aj.region),
   MAPS_URL: esc(aj.maps_url),
+  // "Cómo llegar": abre la ruta desde la ubicación del visitante hasta el gimnasio
+  RUTA_URL: esc(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`Gimnasio ${aj.nombre.replace(/ gym$/i, "")}, ${aj.direccion}, ${aj.comuna}`)}`),
   MAPS_EMBED: esc(`https://www.google.com/maps?q=${encodeURIComponent(`${aj.nombre} ${aj.direccion} ${aj.comuna}`)}&z=16&output=embed`),
   HERO_PREGUNTA: heroPregunta(aj.hero_pregunta),
   HERO_BAJADA: esc(aj.hero_bajada),

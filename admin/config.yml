@@ -138,7 +138,7 @@ collections:
           - { name: direccion, label: Dirección, widget: string }
           - { name: comuna, label: Comuna, widget: string }
           - { name: region, label: Región, widget: string }
-          - { name: maps_url, label: Link de Google Maps, widget: string }
+          - { name: maps_url, label: Link de Google Maps, widget: string, hint: "Link de la ficha del gimnasio en Google Maps (botón Compartir → Copiar vínculo)." }
           - { name: hero_pregunta, label: Frase principal de la portada, widget: string }
           - { name: hero_bajada, label: Texto bajo la frase, widget: text }
           - { name: lema, label: Lema, widget: string }

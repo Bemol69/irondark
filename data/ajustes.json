@@ -5,9 +5,13 @@
   "direccion": "Av. Domingo Santa María 3715",
   "comuna": "Renca",
   "region": "Región Metropolitana",
-  "maps_url": "https://www.google.com/maps/place/Gimnasio+Iron+Dark/@-33.4078015,-70.6964877,17z",
+  "maps_url": "https://www.google.com/maps?cid=101295978119177108",
   "hero_pregunta": "¿6 meses de excusas o 6 meses de cambios?",
   "hero_bajada": "Un gimnasio de barrio con alma oscura: máquinas nuevas, luz violeta y gente que viene a entrenar en serio. En Renca, todos los días.",
   "lema": "Tu mejor versión, todos los días.",
-  "valores": ["Fuerza", "Disciplina", "Constancia"]
+  "valores": [
+    "Fuerza",
+    "Disciplina",
+    "Constancia"
+  ]
 }
