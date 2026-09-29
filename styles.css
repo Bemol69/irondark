@@ -179,7 +179,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- planes ---------- */
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.plan { display: flex; flex-direction: column; padding: 26px; min-height: 280px; transition: transform .5s var(--ease); }
+.plan { container-type: inline-size; display: flex; flex-direction: column; padding: 26px; min-height: 280px; transition: transform .5s var(--ease); }
 .plan:hover { transform: translateY(-4px); }
 .plan__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: auto; }
 .plan__ico { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 14px; background: rgba(124,58,237,.14); color: var(--violet-2); border: 1px solid rgba(167,139,250,.2); }
@@ -187,7 +187,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .plan__n { font: 500 12px var(--f-mono); color: var(--muted); }
 .plan__name { margin: 34px 0 4px; font: 800 30px/1 var(--f-display); text-transform: uppercase; letter-spacing: .01em; }
 .plan__det { margin: 0; color: var(--muted); font-size: 14px; }
-.plan__price { margin: 20px 0 0; font: 900 56px/1 var(--f-display); letter-spacing: -.01em; display: flex; align-items: baseline; gap: 2px; }
+.plan__price { font-variant-numeric: tabular-nums; white-space: nowrap; margin: 20px 0 0; font: 900 56px/1 var(--f-display); letter-spacing: -.01em; display: flex; align-items: baseline; gap: 2px; }
 .plan__price .cur { font-size: .5em; color: var(--violet-2); margin-right: 2px; }
 .plan__price small { font: 500 14px var(--f-body); color: var(--muted); margin-left: 6px; letter-spacing: 0; }
 .plan__cond { display: flex; gap: 8px; align-items: center; margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
@@ -195,7 +195,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .plan--hot { grid-row: span 2; background: radial-gradient(120% 80% at 100% 0%, rgba(124,58,237,.45), transparent 60%), linear-gradient(180deg, #1a1030, #0c0a12); border-color: rgba(167,139,250,.35); padding: 34px; overflow: hidden; }
 .plan--hot::marker { display: none; }
 .plan--hot .plan__name { font-size: clamp(40px, 4vw, 60px); margin-top: 60px; }
-.plan--hot .plan__price { font-size: clamp(80px, 9vw, 130px); }
+.plan--hot .plan__price { font-size: clamp(56px, 25cqi, 124px); flex-wrap: wrap; }
 .plan--hot .plan__ico { background: var(--violet); color: #fff; }
 .plan--hot .btn { margin-top: 26px; align-self: flex-start; }
 .plan--hot .plan__det { font-size: 16px; }
